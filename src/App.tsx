@@ -1,5 +1,6 @@
 import './App.css'
-import Trainer,{ type TrainerProps} from './components/Trainer';
+import ConditionalRendering from './components/ConditionalRendering';
+import Trainer, { type TrainerProps } from './components/Trainer';
 
 function App() {
   const demoTrainer: TrainerProps = {
@@ -13,6 +14,7 @@ function App() {
   return (
     // <> -> react fragment (like a div but without appearing on the page)
     <>
+      <ConditionalRendering />
       <Trainer name="JH" age={31} specialism="Java" />
       <Trainer name="Shafeeq" age={40} specialism="Oracle" />
       {Trainer({ name: "Cameron", age: 32, specialism: "Web" })}
