@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TrainerByName from './components/routing/TrainerByName';
 import NavigateExample from './components/routing/NavigateExample';
 import TrainerQuery from './components/routing/TrainerQuery';
+import Counter from './components/state/Counter';
+import FindTrainer from './components/state/FindTrainer';
 
 function App() {
 
@@ -21,10 +23,14 @@ function App() {
         <Route path='/props' element={<PropsPage />} />
         <Route path='/conditional' element={<ConditionalRendering />} />
         <Route path='/external' element={<ExternalData />} />
-        <Route path='/navigateExample' element={<NavigateExample/>} />
-        <Route path='/trainer/:name' element={<TrainerByName/>}/>
-        <Route path='/trainerQuery' element={<TrainerQuery/>}/>
+        <Route path='/navigateExample' element={<NavigateExample />} />
+        <Route path='/trainer/:name' element={<TrainerByName />} />
+        <Route path='/trainerQuery' element={<TrainerQuery />} />
+        <Route path='/state' element={<Counter />} />
+        <Route path='/find' element={<FindTrainer />} />
+
       </Routes>
+      <p>App: {new Date().toISOString()}</p>
     </Router>
   );
 }
