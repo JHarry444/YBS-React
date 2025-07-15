@@ -1,5 +1,6 @@
 import './App.css'
 import ConditionalRendering from './components/ConditionalRendering';
+import ExternalData from './components/ExternalData';
 import Trainer, { type TrainerProps } from './components/Trainer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     // <> -> react fragment (like a div but without appearing on the page)
     <>
+      <ExternalData />
       <ConditionalRendering />
       <Trainer name="JH" age={31} specialism="Java" />
       <Trainer name="Shafeeq" age={40} specialism="Oracle" />
