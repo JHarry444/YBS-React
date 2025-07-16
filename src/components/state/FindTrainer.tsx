@@ -34,7 +34,7 @@ function FindTrainer() {
             <h3>By Query</h3>
             <form onSubmit={e => {
                 e.preventDefault();
-                debugger;
+
                 let params = [];
 
                 if (data.name) params.push(`name=${data.name}`);

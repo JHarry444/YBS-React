@@ -1,4 +1,4 @@
-import {Link} from "react-router";
+import { Link } from "react-router";
 
 function Header() {
     return (
@@ -7,6 +7,7 @@ function Header() {
             <Link to="/props">Props</Link>
             <Link to="/conditional">Conditonal Rendering</Link>
             <Link to="/external">External Data</Link>
+            <Link to="/liftingState">Lifting State</Link>
         </nav>
     );
 }

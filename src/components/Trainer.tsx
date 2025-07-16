@@ -1,8 +1,4 @@
-export type TrainerProps = {
-    name: string,
-    age: number,
-    specialism?: string
-}
+import type { TrainerProps } from "../types";
 
 function Trainer({ name, age, specialism }: TrainerProps) {
     // const name = "JH";
