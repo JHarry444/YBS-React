@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import type { TrainerProps } from "../../types";
+import ThemeContext from "../../context/themeContext";
 
 function TrainerForm({ setTrainers }: { setTrainers: React.Dispatch<React.SetStateAction<TrainerProps[]>> }) {
 
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
     const [specialism, setSpecialism] = useState("");
+
+    const theme = useContext(ThemeContext);
+
     return (<>
-        <h2>Add Trainer</h2>
-        <form onSubmit={e => {
+        <h2 className={theme}>Add Trainer</h2>
+        <form className={theme} onSubmit={e => {
             e.preventDefault();
 
             setTrainers(currentTrainers => [{ name, age, specialism }, ...currentTrainers]);

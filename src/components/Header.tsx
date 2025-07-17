@@ -1,13 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import ThemeContext from "../context/themeContext";
 
 function Header() {
+    const theme = useContext(ThemeContext);
     return (
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/props">Props</Link>
-            <Link to="/conditional">Conditonal Rendering</Link>
-            <Link to="/external">External Data</Link>
-            <Link to="/liftingState">Lifting State</Link>
+            <Link to="/" className={theme}>Home</Link>
+            <Link to="/props" className={theme}>Props</Link>
+            <Link to="/conditional" className={theme}>Conditonal Rendering</Link>
+            <Link to="/external" className={theme}>External Data</Link>
+            <Link to="/liftingState" className={theme}>Lifting State</Link>
         </nav>
     );
 }
