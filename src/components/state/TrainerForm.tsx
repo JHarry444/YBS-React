@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import type { TrainerProps } from "../../types";
-import ThemeContext from "../../context/themeContext";
+import { ThemeContext } from "../../context/themeContext";
 
 function TrainerForm({ setTrainers }: { setTrainers: React.Dispatch<React.SetStateAction<TrainerProps[]>> }) {
 
@@ -8,7 +8,7 @@ function TrainerForm({ setTrainers }: { setTrainers: React.Dispatch<React.SetSta
     const [age, setAge] = useState(0);
     const [specialism, setSpecialism] = useState("");
 
-    const theme = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
     return (<>
         <h2 className={theme}>Add Trainer</h2>

@@ -11,17 +11,16 @@ import Counter from './components/state/Counter';
 import FindTrainer from './components/state/FindTrainer';
 import TrainerContainer from './components/state/TrainerContainer';
 import FetchTrainers from './components/api/FetchTrainers';
-import ThemeContext from './context/themeContext';
-import { useState } from 'react';
+import { ThemeContextProvider } from './context/themeContext';
+import ComponentWithChildren from './components/ComponentWithChildren';
+import Footer from './components/Footer';
 
 function App() {
-
-  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   // return must have only one parent element
   // watch out for ASI -> JS will insert a ; after a return statement
   return (
-    <ThemeContext.Provider value={theme} >
+    <ThemeContextProvider >
       <Router>
         <Header />
         <Routes>
@@ -36,11 +35,16 @@ function App() {
           <Route path='/find' element={<FindTrainer />} />
           <Route path='/liftingState' element={<TrainerContainer />} />
           <Route path="/fetchTrainers" element={<FetchTrainers />} />
+          <Route path='kids' element={<ComponentWithChildren>
+            <p>This</p>
+            <p>Component</p>
+            <p>Has</p>
+            <p>Kids</p>
+          </ComponentWithChildren>} />
         </Routes>
-        <p>App: {new Date().toISOString()}</p>
-        <button onClick={() => setTheme(currentTheme => currentTheme === "light" ? "dark" : "light")}>Toggle Theme</button>
+        <Footer />
       </Router>
-    </ThemeContext.Provider>
+    </ThemeContextProvider>
   );
 }
 
