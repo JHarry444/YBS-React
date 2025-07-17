@@ -10,6 +10,7 @@ import TrainerQuery from './components/routing/TrainerQuery';
 import Counter from './components/state/Counter';
 import FindTrainer from './components/state/FindTrainer';
 import TrainerContainer from './components/state/TrainerContainer';
+import FetchTrainers from './components/api/FetchTrainers';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
         <Route path='/state' element={<Counter />} />
         <Route path='/find' element={<FindTrainer />} />
         <Route path='/liftingState' element={<TrainerContainer />} />
-
+        <Route path="/fetchTrainers" element={<FetchTrainers />} />
       </Routes>
       <p>App: {new Date().toISOString()}</p>
     </Router>

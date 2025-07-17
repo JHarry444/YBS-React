@@ -1,4 +1,4 @@
-import type { TrainerProps } from "../Trainer";
+import type { TrainerProps } from "../../types";
 import Trainer from "../Trainer";
 
 function ShowTrainers({ trainers }: { trainers: TrainerProps[] }) {
