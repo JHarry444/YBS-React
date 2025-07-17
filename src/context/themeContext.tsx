@@ -1,7 +1,7 @@
 import { createContext, useState, type ReactNode } from "react";
 
 type ThemeData = {
-    theme: "light" | "dark",
+    theme: string,
     toggleTheme: () => void
 }
 export const ThemeContext = createContext<ThemeData>({
@@ -12,7 +12,9 @@ export const ThemeContext = createContext<ThemeData>({
 
 
 export const ThemeContextProvider = ({ children }: { children: ReactNode | ReactNode[] }) => {
-    const [theme, setTheme] = useState<"light" | "dark">("dark");
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+
+    localStorage.setItem("theme", theme);
     return (
         <ThemeContext.Provider value={{
             theme,
